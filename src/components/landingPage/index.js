@@ -13,7 +13,15 @@ class LandingPage extends React.Component {
     return (
       <div>
        <div className="slider">Photo slide</div>
-       <Product></Product>
+       <div className="content">
+         
+          <div className="content-title">
+            <div>Category</div>
+            <div>SeachBox</div>
+          </div>
+          <Product></Product> 
+       </div>
+       
       </div>
     );
   }
