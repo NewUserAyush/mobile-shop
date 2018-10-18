@@ -1,0 +1,17 @@
+.slider{
+    height:12em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    border: 1px solid gray;
+}
+
+.category{
+    /* border: 1px solid gray; */
+    margin: 1em;
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+
