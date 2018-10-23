@@ -19,13 +19,11 @@ class Slider extends React.Component {
     componentDidMount(){
         this.startSlide();
         setInterval(this.startSlide, 2000)
-        console.log(this.state);
     }
 
   startSlide(){
     var i;
     var images = document.getElementsByClassName("img-style");
-    console.log(" ",i, images)
     for (i = 0; i < images.length; i++) {
         images[i].style.display = "none";  
     }
