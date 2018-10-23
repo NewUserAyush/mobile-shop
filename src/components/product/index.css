@@ -1,0 +1,18 @@
+.category{
+    /* border: 1px solid gray; */
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.item{
+    width: 9.7em;
+    height: 9em;
+    /* flex: 1; */
+    text-align: center;
+    margin: 1em;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
