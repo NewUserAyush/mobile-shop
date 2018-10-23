@@ -7,12 +7,39 @@
 }
 
 .item{
-    width: 9.7em;
+    width: 8.7em;
     height: 9em;
     /* flex: 1; */
-    text-align: center;
+    /* text-align: center; */
     margin: 1em;
+    padding: 0.5em;
     border-radius: 10px;
     background: white;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+img{
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 0.9em;
+    color: #fff;
+    text-align: left;
+}
+
+.subtitle{
+    font-weight: 300;
+    font-size: 0.85em;
+    text-align: left;
+    color: #edeaea;
+    margin-top: -0.2em;
+}
+
+.product-image{
+    height: 6em;
+    margin-top: 1em;
 }
