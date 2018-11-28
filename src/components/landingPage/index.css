@@ -20,3 +20,7 @@
 .content{
     background: #ffffff;
 }
+
+.productList{
+    display: none;
+}

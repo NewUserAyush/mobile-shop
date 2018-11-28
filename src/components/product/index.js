@@ -1,12 +1,15 @@
 import React from 'react';
 import './index.css';
+import {NavLink} from 'react-router-dom';
 
 class Product extends React.Component {
-  constructor(prop){
-    super(prop);
-    this.state={
+state={
       arr:[
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
+        {"title":"EyerPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
+        {"title":"Speekar","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
+        {"title":"Mobile","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
+        {"title":"Laptop","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
@@ -18,41 +21,57 @@ class Product extends React.Component {
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
         {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
-        {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
-        {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
-        {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
-        {"title":"HeadPhone","subtitle":"headphone","img":require('../../asset/headphone2.jpg')},
-      ]
+      ],
+      selectCategory:''
     }
+  
+
+
+  // checkCategoryStatus(){
+  //   console.log("(this.props.selectCategory",this.props.selectCategory)
+  //   if(this.props.selectCategory!==''){
+  //     return 'hide';
+  //   } else {
+  //     return 'category';
+  //   }
+  // }
+
+  getProductList(data){
+    this.setState(prvState=>({
+      categoryData:data
+    }))
   }
-
-
+  
   render() {
     return (
-        
-        <div className="category">
+      <div>
+        <div className='category'>
         {this.state.arr.map((d,i) =>
-          <ProductItem data = {d}></ProductItem> 
-          )}
+          <NavLink to={"/category/"+d.title} >
+              <ProductItem data = {d} categoryData={this.props.categoryData} onClick={()=>this.getProductList(d)}/>
+          </NavLink>
+        ) }
         </div>
+      </div>
+        
     );
   }
 }
 
 export default Product;
 
-export const ProductItem = (props) =>
-  {
-            
-                    const styles = {
-                      backgroundImage: `url(${props.data.img})`,
-                      backgroundSize: 'cover',
-                      backgroundRepeat: 'no-repeat'
-                    }
-                return (<div className="item" style={styles}>
-                    <div className="title">{props.data.title}</div>
-                    <div className="subtitle">{props.data.subtitle}</div>
+class ProductItem extends React.Component {
+  
+
+  render(){
+    const styles = {
+      backgroundImage: `url(${this.props.data.img})`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat'
+    }
+    return (<div className="item" style={styles}  selectCategory={this.selectCategory}>
+                    <div className="title">{this.props.data.title}</div>
+                    <div className="subtitle">{this.props.data.subtitle}</div>
                 </div>);
-                
-                
+  }
 }

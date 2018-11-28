@@ -6,6 +6,11 @@
     justify-content: center;
 }
 
+
+.hide{
+    display: none;
+}
+
 .item{
     width: 8.7em;
     height: 9em;
@@ -42,4 +47,12 @@ img{
 .product-image{
     height: 6em;
     margin-top: 1em;
+}
+
+.productList{
+    display: none;
+}
+
+a{
+    text-decoration: none;
 }

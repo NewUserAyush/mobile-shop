@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactTimeout from 'react-timeout'
 import './index.css';
 
 const battery = require('../../asset/images/slide1.jpg')
@@ -31,6 +30,7 @@ class Slider extends React.Component {
     if (myIndex > images.length) {
         myIndex = 1;
     }
+    if(!images[myIndex-1]) return;
     images[myIndex-1].style.display = "block";  
   }
 
@@ -47,5 +47,5 @@ class Slider extends React.Component {
   }
 }
 
-export default ReactTimeout (Slider);
+export default Slider;
 
